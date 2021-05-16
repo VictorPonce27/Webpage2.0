@@ -1,10 +1,12 @@
 import '../CSS/App.css';
 import Button from '@material-ui/core/Button'
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Navigation from '../Header/Navigation';
 
 
 function Welcome() {
     return (
+        <div> <Navigation tab='1'/>  </div>,
       <div>
       <div className='box'>
         <form action="">
@@ -19,8 +21,13 @@ function Welcome() {
             <label>Password:</label>
           </div>
           <ButtonGroup aria-label="Toolbar">
-          <Button variant="contained" color="primary">Ingresar</Button>
-          <Button variant="contained" color="primary">Registrar</Button>
+          <Button variant="contained" 
+          style={{
+              background: "#35b38d"
+          }}>Ingresar</Button>
+          <Button variant="contained" style={{
+              background: "#35b38d"
+          }}>Registrar</Button>
           </ButtonGroup>
         </form>
       </div>

@@ -8,7 +8,7 @@ import Welcome from './Pages/Welcome';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Welcome />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

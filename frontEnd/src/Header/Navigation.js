@@ -1,6 +1,7 @@
-import AccountBoxIcon from '@material-ui/icons/AccountBox'
-import DashBoard from '@material-ui/icons/Dashboard'
 //
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import DashBoard from '@material-ui/icons/Dashboard'
+
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -8,6 +9,7 @@ import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
@@ -16,6 +18,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import VideogameAssetIcon from '@material-ui/icons/VideogameAsset';
 import Link from '@material-ui/core/Link';
+
 
 const drawerWidth = 240;
 
@@ -88,8 +91,9 @@ const styles = {
     }
 }
 
+const preventDefault = (event) => event.preventDefault();
 
-function Navbar(props) {
+function Navigation(props) {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -139,17 +143,25 @@ function Navbar(props) {
                         </IconButton>
                     </div>
                     <Divider />
+                    
                     <List>
                         {/* <Nav variant="pills" activeKey={props.tab} className='flex-column'> */}
-                            <List.Item className="tab">
-                                <Link aria-current href='/Portal' eventKey="1"> <DashBoard fontSize='large' /> Home  </Link>
-                            </List.Item>
-                            <List.Item className='tab'>
-                                <Link aria-current href='/UserProfile' eventKey="2" > <AccountBoxIcon fontSize='large' /> User Profile</Link>
-                            </List.Item>
-                            <List.Item className='tab'>
-                                <Link aria-current href='/Game' eventKey="3" > <VideogameAssetIcon fontSize='large' /> Game</Link>
-                            </List.Item>
+                        <ListItem>
+                        <Link href="#" onClick={preventDefault}>
+                            <DashBoard fontSize='large' /> Home
+                            </Link>
+                        </ListItem>
+                        <ListItem>
+                        <Link href="#" onClick={preventDefault}>
+                            <AccountBoxIcon fontSize='large' /> User
+                            </Link>
+                        </ListItem>
+                        <ListItem> 
+                        <Link href="#" onClick={preventDefault}>
+                            <VideogameAssetIcon fontSize='large' /> Game
+                            </Link>
+                        </ListItem>
+                            
                         {/* </Nav> */}
                     </List>
                 </Drawer>
@@ -158,4 +170,4 @@ function Navbar(props) {
     );
 }
 
-export default Navbar; 
+export default Navigation; 
