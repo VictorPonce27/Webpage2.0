@@ -1,0 +1,133 @@
+body{ 
+    background: url("/src/images/bg01.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.text-center{
+    color:#fff;
+    text-transform:uppercase;
+    font-size: 23px;
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+
+.box{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.89);
+    border-radius:3px;
+    padding: 10em 10em 10em;
+}
+
+.input-container{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.input-container label{
+    position:absolute;
+    top:0px;
+    left:0px;
+    font-size:16px;
+    color:#fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid rgb(255, 255, 255);
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+
+.input-container input:focus{ 
+ border:none;
+ outline:none;
+ border-bottom:1px solid #6abac5;
+}
+
+.btn{
+    color:#fff!important;
+    background-color:#35b38d !important; 
+    outline: none!important;
+    border: 0!important;
+    color: #fff!important;
+    padding:10px 20px!important;
+    text-transform:uppercase!important;
+    margin-top:50px!important;
+    border-radius:2px!important;
+    cursor:pointer!important;
+    position:relative!important;
+    margin-right: 2%!important;
+    margin-left:  2%!important;
+}
+
+.signUp{
+    color:#fff;
+    background-color:#35b38d;
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding:10px 20px;
+    text-transform:uppercase;
+    margin-top:50px;
+    border-radius:2px;
+    cursor:pointer;
+    position:relative;
+    left: 70px;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+    top:-12px;
+    font-size:12px;
+
+}
+
+::placeholder{
+    text-align: right ;
+}
+
+.row {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+}
+
+.pictures {
+    flex: 33.33%;
+    text-align: center;
+}
+
+.about-box {
+    background-color: #35b38d;
+}
+
+
+.aboutText {
+    display: flex;
+}
+
+.description {
+    flex: 33.33%;
+    text-align: center;
+}
+
+.border {
+    margin: 0 0 1rem 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    position: absolute;
+}

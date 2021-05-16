@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BorswerRouter, Rout, Switch} from 'react-router-dom'; 
+import Welcome from './Pages/Welcome';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Welcome />
   </React.StrictMode>,
   document.getElementById('root')
 );
