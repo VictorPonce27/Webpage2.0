@@ -1,7 +1,6 @@
 //
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DashBoard from '@material-ui/icons/Dashboard'
-import SimpleSnackbar from './SimpleSnackbar'; 
 import VerticalTabs from './VerticalTabs';
 
 import React from 'react';
