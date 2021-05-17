@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 import Welcome from './Pages/Welcome';
 import Portal from './Pages/Portal'; 
+import UserProfile from './Pages/UserProfile';
 
 ReactDOM.render(
   //   <BrowserRouter>
@@ -20,6 +21,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path='/' component={Welcome} />
         <Route path='/Portal' component={Portal} />
+        <Route path='/UserProfile' component={UserProfile} />
       </Switch>
     </HashRouter>
   </React.StrictMode>, 
