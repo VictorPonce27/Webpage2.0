@@ -2,15 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+
+import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 import Welcome from './Pages/Welcome';
-import {BrowserRouter,Route, Switch} from 'react-router-dom'; 
+import Portal from './Pages/Portal'; 
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route exact path='/Welcome' component={Welcome}/>
-    </Switch>
-  </BrowserRouter>,
+  //   <BrowserRouter>
+  //     <Switch>
+  //       <Route exact path='/' component={Welcome}/>
+  //       {/* <Route/> */}
+  //     </Switch>
+  //   </BrowserRouter>,
+
+  <React.StrictMode>
+    <HashRouter basename = {process.env.PUBLIC_URL}>
+      <Switch>
+        <Route exact path='/' component={Welcome} />
+        <Route path='/Portal' component={Portal} />
+      </Switch>
+    </HashRouter>
+  </React.StrictMode>, 
   document.getElementById('root')
 );
 

@@ -22,7 +22,7 @@ function SimpleSnackbar(Props) {
   
     return (
       <div>
-        <Button onClick={handleClick}> {Props.image}   {Props.value} </Button>
+        <Button onClick={handleClick}> {Props.image} {Props.value} </Button>
         <Snackbar
           anchorOrigin={{
             vertical: 'bottom',
