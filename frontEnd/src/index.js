@@ -8,6 +8,7 @@ import Welcome from './Pages/Welcome';
 import Portal from './Pages/Portal'; 
 
 ReactDOM.render(
+<<<<<<< HEAD
   //   <BrowserRouter>
   //     <Switch>
   //       <Route exact path='/' component={Welcome}/>
@@ -23,6 +24,13 @@ ReactDOM.render(
       </Switch>
     </HashRouter>
   </React.StrictMode>, 
+=======
+  <BrowserRouter>
+    <Switch>
+      <Route exact path='/' component={Welcome}/>
+    </Switch>
+  </BrowserRouter>,
+>>>>>>> 1a0f578e1082677a6a7510ba1e2d96a813864c6c
   document.getElementById('root')
 );
 
