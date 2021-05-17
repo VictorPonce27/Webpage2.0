@@ -1,6 +1,7 @@
 //
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DashBoard from '@material-ui/icons/Dashboard'
+import SimpleSnackbar from './Navigation'
 
 import React from 'react';
 import clsx from 'clsx';
@@ -18,7 +19,6 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import VideogameAssetIcon from '@material-ui/icons/VideogameAsset';
 import Link from '@material-ui/core/Link';
-
 
 const drawerWidth = 240;
 
@@ -148,7 +148,7 @@ function Navigation(props) {
                         {/* <Nav variant="pills" activeKey={props.tab} className='flex-column'> */}
                         <ListItem>
                         <Link href="#" onClick={preventDefault}>
-                            <DashBoard fontSize='large' /> Home
+                            <DashBoard fontSize='large' /> <button type="button"><SimpleSnackbar  value="home"/></button>
                             </Link>
                         </ListItem>
                         <ListItem>
