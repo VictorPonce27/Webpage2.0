@@ -8,7 +8,7 @@ import {BrowserRouter,Route, Switch} from 'react-router-dom';
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route exact path='/Welcome' component={Welcome}/>
+      <Route exact path='/' component={Welcome}/>
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')

@@ -2,6 +2,7 @@
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DashBoard from '@material-ui/icons/Dashboard'
 import SimpleSnackbar from './SimpleSnackbar'; 
+import VerticalTabs from './VerticalTabs';
 
 import React from 'react';
 import clsx from 'clsx';
@@ -145,23 +146,7 @@ function Navigation(props) {
                     <Divider />
                     
                     <List>
-                        {/* <Nav variant="pills" activeKey={props.tab} className='flex-column'> */}
-                        <ListItem>
-                        <Link href="#" onClick={preventDefault}>
-                                <button type="button"><SimpleSnackbar image={<DashBoard fontSize='large' />} value="home"/></button>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                        <Link href="#" onClick={preventDefault}>
-                            <AccountBoxIcon fontSize='large' /> User
-                            </Link>
-                        </ListItem>
-                        <ListItem> 
-                        <Link href="#" onClick={preventDefault}>
-                            <VideogameAssetIcon fontSize='large' /> Game
-                            </Link>
-                        </ListItem>
-                            
+                            <VerticalTabs props="tabs"/>
                         {/* </Nav> */}
                     </List>
                 </Drawer>
