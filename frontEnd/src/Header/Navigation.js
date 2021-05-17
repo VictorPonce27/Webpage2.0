@@ -1,7 +1,7 @@
 //
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DashBoard from '@material-ui/icons/Dashboard'
-import SimpleSnackbar from './Navigation'
+import SimpleSnackbar from './SimpleSnackbar'; 
 
 import React from 'react';
 import clsx from 'clsx';
@@ -148,7 +148,7 @@ function Navigation(props) {
                         {/* <Nav variant="pills" activeKey={props.tab} className='flex-column'> */}
                         <ListItem>
                         <Link href="#" onClick={preventDefault}>
-                            <DashBoard fontSize='large' /> <button type="button"><SimpleSnackbar  value="home"/></button>
+                                <button type="button"><SimpleSnackbar image={<DashBoard fontSize='large' />} value="home"/></button>
                             </Link>
                         </ListItem>
                         <ListItem>

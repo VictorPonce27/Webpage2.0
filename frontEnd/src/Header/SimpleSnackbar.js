@@ -4,7 +4,8 @@ import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
-export default function SimpleSnackbar(Props) {
+
+function SimpleSnackbar(Props) {
     const [open, setOpen] = React.useState(false);
   
     const handleClick = () => {
@@ -21,7 +22,7 @@ export default function SimpleSnackbar(Props) {
   
     return (
       <div>
-        <Button onClick={handleClick}>{Props.value}</Button>
+        <Button onClick={handleClick}> {Props.image}   {Props.value} </Button>
         <Snackbar
           anchorOrigin={{
             vertical: 'bottom',
@@ -45,3 +46,5 @@ export default function SimpleSnackbar(Props) {
       </div>
     );
   }
+
+export default SimpleSnackbar;
