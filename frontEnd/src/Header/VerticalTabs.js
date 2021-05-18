@@ -35,13 +35,6 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 
-function a11yProps(index) {
-  return {
-    id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
-  };
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -54,9 +47,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function VerticalTabs() {
+export default function VerticalTabs(Props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(Props.tab);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -72,9 +65,9 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab aria-current href='#/Portal' label="Home" {...a11yProps(0)} />
-        <Tab aria-current href='#/UserProfile' label="User" {...a11yProps(1)} />
-        <Tab label="Game" {...a11yProps(2)} />
+        <Tab aria-current href='#/Portal' label="Home"/>
+        <Tab aria-current href='#/UserProfile' label="User"/>
+        <Tab label="Game"/>
       </Tabs>
       <TabPanel value={value} index={0}>
         <DashBoard fontSize='large' />

@@ -3,7 +3,7 @@ import Navigation from '../Header/Navigation'
 
 function Welcome() {
     return (
-        <div> <Navigation tab='1' /></div>
+        <div> <Navigation state={true} tab={0} /></div>
     );
 }
 

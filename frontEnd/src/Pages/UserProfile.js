@@ -32,7 +32,7 @@ function UserProfileBox() {
 function UserProfile() {
     return (
         <div>
-            <Navigation tab='2' />
+            <Navigation state={true}  tab={1} />
             <UserProfileBox />
         </div>
     )
