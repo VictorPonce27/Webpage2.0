@@ -11,7 +11,6 @@ import VideogameAssetIcon from '@material-ui/icons/VideogameAsset';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
