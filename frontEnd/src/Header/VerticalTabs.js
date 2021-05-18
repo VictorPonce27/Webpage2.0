@@ -11,7 +11,6 @@ import VideogameAssetIcon from '@material-ui/icons/VideogameAsset';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -54,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function VerticalTabs() {
+export default function VerticalTabs(Props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -72,8 +71,8 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab aria-current href='#/Portal' label="Home" {...a11yProps(0)} />
-        <Tab aria-current href='#/UserProfile' label="User" {...a11yProps(1)} />
+        <Tab aria-current href='#/Portal' label="Home" />
+        <Tab aria-current href='#/UserProfile' label="User" />
         <Tab label="Game" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>

@@ -139,8 +139,7 @@ function Navigation(props) {
                     <Divider />
                     
                     <List>
-                            <VerticalTabs props="tabs"/>
-                        {/* </Nav> */}
+                            <VerticalTabs tab = {props.tab}/>
                     </List>
                 </Drawer>
             </div>
