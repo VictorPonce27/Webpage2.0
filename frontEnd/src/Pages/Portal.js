@@ -1,8 +1,10 @@
 import '../CSS/App.css';
 import Navigation from '../Header/Navigation'
-import CardItem from '../Widgets/cardItem';
 import Linegraph from '../Widgets/Linegraph';
 import Grid from '@material-ui/core/Grid'
+import Table from '../Widgets/Table';
+import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
 function Welcome() {
     return (
         <div> <Navigation tab='1' />
@@ -13,11 +15,17 @@ function Welcome() {
                             <b>Game GamePlace Holder</b>
                         </div>
                     </Grid>
-                    <Grid item xs>
+                    <Grid time medium >
+                        <Box width = '50%'bgcolor = 'white'>
+                            <Table/>
+                        </Box>
+
+                    </Grid>
+                    <Grid item large>
                         <Grid container spacing>
-                            <CardItem CardContent={<Linegraph />} />
-                            <CardItem CardContent={<Linegraph />} />
-                            <CardItem CardContent={<Linegraph />} />
+                            <Box width = '50%' bgcolor = 'white'> 
+                                <Linegraph/>
+                            </Box>
                         </Grid>
                     </Grid>
                     <Grid item xs>
