@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 function Welcome() {
     return (
-        <div> <Navigation tab='1' />
+        <div> <Navigation state={true} tab={0} />
             <div>
                 <Grid container spacing={6} style={{ top: '10%', left: '25%', display: 'block', position: 'absolute' }}>
                     <Grid item>

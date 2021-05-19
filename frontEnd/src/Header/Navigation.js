@@ -79,18 +79,10 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const styles = {
-    paper: {
-        backgroundColor: 'backgroundColor:"#2e353d'
-    }
-}
-
-const preventDefault = (event) => event.preventDefault();
-
-function Navigation(props) {
+function Navigation(Props) {
     const classes = useStyles();
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = React.useState(Props.state);
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -139,7 +131,8 @@ function Navigation(props) {
                     <Divider />
                     
                     <List>
-                            <VerticalTabs tab = {props.tab}/>
+                            <VerticalTabs tab={Props.tab}/>
+                        {/* </Nav> */}
                     </List>
                 </Drawer>
             </div>
