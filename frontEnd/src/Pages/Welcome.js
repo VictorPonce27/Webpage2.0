@@ -6,18 +6,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 
 class Welcome extends React.Component {
-
-  handleNameChange(event) { 
-    var user = this.state.user; 
-    user.name = event.target.value; 
-    this.setState({user:user}); 
-  }
-
-  handleButtonClicked(){
-    console.log(this.state.user); 
-    alert(this.state.user); 
-  }
-
+  
   constructor(props) {
     super(props);
     this.state = { 
@@ -26,10 +15,18 @@ class Welcome extends React.Component {
       }
     }
   }
-
-
-
-
+  
+    handleNameChange(event) { 
+      var user = this.state.user; 
+      user.name = event.target.value; 
+      this.setState({user:user}); 
+    }
+  
+    handleButtonClicked(){
+      console.log(this.state.user); 
+      alert(this.state.user); 
+    }
+  
   render() {
     return (
       <div>
