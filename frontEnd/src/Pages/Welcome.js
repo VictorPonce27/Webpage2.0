@@ -9,24 +9,22 @@ class Welcome extends React.Component {
   
   constructor(props) {
     super(props);
+
+    this.onChangeName = this.onChangeName.bind(this); 
+
     this.state = { 
-      user: {
-        name: props.name
-      }
+      name: ''
     }
   }
-  
-    handleNameChange(event) { 
-      var user = this.state.user; 
-      user.name = event.target.value; 
-      this.setState({user:user}); 
-    }
-  
-    handleButtonClicked(){
-      console.log(this.state.user); 
-      alert(this.state.user); 
-    }
-  
+
+  onChangeName(e){ 
+    this.setState({name: e.target.value})
+  }
+
+  onSubmit(e){
+    e.preventDefault(); 
+  }
+
   render() {
     return (
       <div>
@@ -34,9 +32,8 @@ class Welcome extends React.Component {
           <form action="">
             <span className="text-center">Welcome to Valgrind</span>
             <div className="input-container">
-              <input type="email" required="required" placeholder="User@gmail.com" value={this.state.user.name} onChange={this.handleNameChange(this)} />
-              <label>User:
-          </label>
+              <input type="email" required="required" placeholder="User@gmail.com" value={this.state.name} onChange={this.onChangeName.bind(this)} />
+              <label>User:</label>
             </div>
             <div className="input-container">
               <input type="password" placeholder="************" />
@@ -44,7 +41,7 @@ class Welcome extends React.Component {
             </div>
             <ButtonGroup aria-label="Toolbar">
               {/* <Button variant="default me-md-2" className="btn" href='#/Portal'>Ingresar</Button>{''} */}
-              <Button variant="default me-md-2" className="btn" >setDData</Button>{''}
+              <Button variant="default me-md-2" className="btn" onClick= {this.handleButtonClicked.bind(this)} >setDData</Button>{''}
               {/* <Button variant="default me-md-2" className="btn" href='#/Register'>Registrar</Button>{''} */}
               <Button variant="default me=md-2" className="btn" onClick={this.handleButtonClicked.bind(this)}> getData </Button> 
             </ButtonGroup>
