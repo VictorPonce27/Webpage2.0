@@ -1,7 +1,8 @@
 const express = require('express');
 var request = require('request');
 const app = express();
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT = 5000;
+const port = 5000; 
 const sqlConfig = require('./sqlConfig');
 
 
@@ -23,20 +24,25 @@ const sqlConfig = require('./sqlConfig');
 app.use("/", express.static("public"));
 app.use(express.json());
 
+
 app.post("/login", (req, res) => {
-    const conn = sql.connect(sqlConfig, (err) => {
+    var sql = require("mssql"); 
+    const con = sql.connect(sqlConfig, function(err) {
         if (err) console.log(err);
-        const request = new sql.Request();
+        var request = new sql.Request();
+
+        console.log(req.body.name); 
         let query =
-            "select * from empleado where UserName='" + req.body.UserName + "'";
+            "select * from empleado where empleado.nombre='" + req.body.name + "'";
         console.log(query);
         request.query(query, (err, { recordset }) => {
             if (err) console.log(err);
+            console.log('working?');
             console.log(recordset[0]);
             let login = false;
             if (
-                recordset[0].UserName === req.body.UserName
-            ) {
+                recordset[0].nombre === req.body.name
+            ) { 
                 login = true;
             }
             res.json({

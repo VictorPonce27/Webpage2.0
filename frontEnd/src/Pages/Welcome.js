@@ -21,9 +21,29 @@ class Welcome extends React.Component {
     this.setState({name: e.target.value})
   }
 
-  onSubmit(e){
-    e.preventDefault(); 
+  async getCredentials(){
+    const options = { 
+      method: "POST", 
+      headers: {"Content-Type":"application/json"}, 
+      body: JSON.stringify({name: this.state.name}),
+    }; 
+    const response = await fetch('login', options); 
+    const data = await response.json(); 
+    if(data.login){ 
+     window.open('#/Portal')
+     
+    }
+    else{
+      alert("username is wrong")
+    }
   }
+
+
+  onSubmit(e){
+    alert(JSON.stringify({ name: this.state.name }));
+  }
+
+
 
   render() {
     return (
@@ -41,9 +61,11 @@ class Welcome extends React.Component {
             </div>
             <ButtonGroup aria-label="Toolbar">
               {/* <Button variant="default me-md-2" className="btn" href='#/Portal'>Ingresar</Button>{''} */}
-              <Button variant="default me-md-2" className="btn" onClick= {this.handleButtonClicked.bind(this)} >setDData</Button>{''}
+              <Button variant="default me-md-2" className="btn" onClick= {this.getCredentials.bind(this)} >check</Button>{''}
+              <Button variant="default me-md-2" className="btn" onClick= {this.onSubmit.bind(this)} >Checkthings</Button>{''}
+
               {/* <Button variant="default me-md-2" className="btn" href='#/Register'>Registrar</Button>{''} */}
-              <Button variant="default me=md-2" className="btn" onClick={this.handleButtonClicked.bind(this)}> getData </Button> 
+              {/* <Button variant="default me=md-2" className="btn" onClick={this.handleButtonClicked.bind(this)}> getData </Button>  */}
             </ButtonGroup>
           </form>
         </div>
