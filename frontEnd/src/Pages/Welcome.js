@@ -6,7 +6,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 
 class Welcome extends React.Component {
-  
+
   constructor(props) {
     super(props);
 
@@ -30,10 +30,10 @@ class Welcome extends React.Component {
     const response = await fetch('login', options); 
     const data = await response.json(); 
     if(data.login){ 
-     window.open('#/Portal')
-     
+     window.open('#/Portal', "_self")
     }
     else{
+      sessionStorage.setItem("Authenticate", false);
       alert("username is wrong")
     }
   }
@@ -42,8 +42,6 @@ class Welcome extends React.Component {
   onSubmit(e){
     alert(JSON.stringify({ name: this.state.name }));
   }
-
-
 
   render() {
     return (
@@ -61,7 +59,7 @@ class Welcome extends React.Component {
             </div>
             <ButtonGroup aria-label="Toolbar">
               {/* <Button variant="default me-md-2" className="btn" href='#/Portal'>Ingresar</Button>{''} */}
-              <Button variant="default me-md-2" className="btn" onClick= {this.getCredentials.bind(this)} >check</Button>{''}
+              <Button variant="default me-md-2" className="btn" onClick= {this.getCredentials.bind(this)} >Login</Button>{''}
               <Button variant="default me-md-2" className="btn" onClick= {this.onSubmit.bind(this)} >Checkthings</Button>{''}
 
               {/* <Button variant="default me-md-2" className="btn" href='#/Register'>Registrar</Button>{''} */}

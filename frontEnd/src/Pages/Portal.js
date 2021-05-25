@@ -3,9 +3,8 @@ import Navigation from '../Header/Navigation'
 import Linegraph from '../Widgets/Linegraph';
 import Grid from '@material-ui/core/Grid'
 import Table from '../Widgets/Table';
-import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
-function Welcome() {
+function Portal() {
     return (
         <div> <Navigation state={true} tab={0} />
             <div>
@@ -41,4 +40,4 @@ function Welcome() {
     );
 }
 
-export default Welcome;
+export default Portal;
