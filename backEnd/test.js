@@ -37,7 +37,6 @@ app.post("/login", (req, res) => {
         console.log(query);
         request.query(query, (err, { recordset }) => {
             if (err) console.log(err);
-            console.log('working?');
             console.log(recordset[0]);
             let login = false;
             if (
