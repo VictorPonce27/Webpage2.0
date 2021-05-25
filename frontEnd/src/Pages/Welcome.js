@@ -29,9 +29,10 @@ class Welcome extends React.Component {
     }; 
     const response = await fetch('login', options); 
     const data = await response.json(); 
+    console.log(data); 
+
     if(data.login){ 
-     window.open('#/Portal')
-     
+     window.open('#/Portal',"_self")
     }
     else{
       alert("username is wrong")
@@ -60,12 +61,9 @@ class Welcome extends React.Component {
               <label>Password:</label>
             </div>
             <ButtonGroup aria-label="Toolbar">
-              {/* <Button variant="default me-md-2" className="btn" href='#/Portal'>Ingresar</Button>{''} */}
-              <Button variant="default me-md-2" className="btn" onClick= {this.getCredentials.bind(this)} >check</Button>{''}
-              <Button variant="default me-md-2" className="btn" onClick= {this.onSubmit.bind(this)} >Checkthings</Button>{''}
+              <Button variant="default me-md-2" className="btn" onClick= {this.getCredentials.bind(this)} >Login</Button>{''}
 
-              {/* <Button variant="default me-md-2" className="btn" href='#/Register'>Registrar</Button>{''} */}
-              {/* <Button variant="default me=md-2" className="btn" onClick={this.handleButtonClicked.bind(this)}> getData </Button>  */}
+              <Button variant="default me-md-2" className="btn" href='#/Register'>Register</Button>{''}
             </ButtonGroup>
           </form>
         </div>
