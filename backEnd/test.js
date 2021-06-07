@@ -33,14 +33,14 @@ app.post("/login", (req, res) => {
 
         console.log(req.body.name); 
         let query =
-            "select * from empleado where empleado.nombre='" + req.body.name + "'";
+            "select * from DB.employee where employee.name='" + req.body.name + "'";
         console.log(query);
         request.query(query, (err, { recordset }) => {
             if (err) console.log(err);
             console.log(recordset[0]);
             let login = false;
             if (
-                recordset[0].nombre === req.body.name
+                recordset[0].name === req.body.name
             ) { 
                 login = true;
             }
@@ -51,6 +51,27 @@ app.post("/login", (req, res) => {
         });
     });
     console.log("Post Login");
+    console.log(req.body);
+});
+
+app.post("/data",(req,res)=> {
+    var sql = require("mssql"); 
+    const con = sql.connect(sqlConfig,function(err){
+        if(err) console.log(err); 
+        var request = new sql.Request(); 
+
+        console.log(req.body.id); 
+        let query = "Select * from DB.ticket where ticket.assigned ='"+ req.body.id +"'"; 
+        console.log(query); 
+        request.query(query,(err,{recordset}) => {
+            if(err) console.log(err); 
+            console.log(recordset[0]); 
+            res.json({
+                resultado: recordset,
+            }); 
+        });
+    });
+    console.log("Post Login"); 
     console.log(req.body);
 });
 
