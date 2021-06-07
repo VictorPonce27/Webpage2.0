@@ -33,7 +33,7 @@ app.post("/login", (req, res) => {
 
         console.log(req.body.name); 
         let query =
-            "select * from empleado where empleado.nombre='" + req.body.name + "'";
+            "select * from employee where employee.name='" + req.body.name + "'";
         console.log(query);
         request.query(query, (err, { recordset }) => {
             if (err) console.log(err);
