@@ -8,6 +8,7 @@ import Welcome from './Pages/Welcome';
 import Portal from './Pages/Portal'; 
 import UserProfile from './Pages/UserProfile';
 import GuardedRoute from './GuardedRoute'
+import Admin from './Pages/Admin';
     
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.render(
         <Route exact path='/' component={Welcome}/>
         <GuardedRoute path='/Portal' component={Portal} auth={true}/>
         <GuardedRoute path='/UserProfile' component={UserProfile} auth={true}/>
+        <GuardedRoute path='/Admin' component={Admin} auth={true} />
       </Switch>
     </HashRouter>
   </React.StrictMode>, 

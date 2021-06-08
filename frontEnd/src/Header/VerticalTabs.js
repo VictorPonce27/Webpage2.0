@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import DashBoard from '@material-ui/icons/Dashboard'
 import VideogameAssetIcon from '@material-ui/icons/VideogameAsset';
+import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -69,6 +70,7 @@ export default function VerticalTabs(Props) {
         <Tab aria-current href='#/Portal' label="Home"/>
         <Tab aria-current href='#/UserProfile' label="User"/>
         <Tab label="Game"/>
+        <Tab aria-current href='#Admin' label="Admin"/>
       </Tabs>
       <TabPanel value={value} index={0}>
         <DashBoard fontSize='large' />
@@ -78,6 +80,9 @@ export default function VerticalTabs(Props) {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <VideogameAssetIcon fontSize='large' />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <SupervisedUserCircleIcon fontSize='large' />
       </TabPanel>
     </div>
   );

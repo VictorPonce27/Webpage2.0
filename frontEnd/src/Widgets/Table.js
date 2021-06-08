@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { DataGrid } from '@material-ui/data-grid';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,6 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+
 
 function MakeRows(array){
   var list = []; 
@@ -54,6 +54,17 @@ const useStyles = makeStyles({
     minWidth: 650,
   },
 });
+
+function changeButton(ID) {
+  if(document.getElementById(ID).innerHTML === "Empezar") {
+    document.getElementById(ID).innerHTML = "Detener";
+    document.getElementById(ID).style.backgroundColor = "#FF0000";
+  }
+  else {
+    document.getElementById(ID).innerHTML = "Empezar"
+    document.getElementById(ID).style.backgroundColor = "#0000FF";
+  }
+}
 
 function createData(id, priority, summary) {
   return { id, priority, summary};
@@ -121,7 +132,7 @@ export default function TableP(props) {
               <TableCell align="center">{row.priority}</TableCell>
               <TableCell align="center">{row.summary}</TableCell>
               <TableCell>
-                <Button variant="contained" color="primary">Entregar</Button>
+                <Button variant="contained" color="primary" id={row.id} onClick={() => changeButton(row.id)}>Empezar</Button>
               </TableCell>
             </TableRow>
           ))}
