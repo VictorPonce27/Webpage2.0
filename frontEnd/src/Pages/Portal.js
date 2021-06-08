@@ -2,7 +2,7 @@ import '../CSS/App.css';
 import Navigation from '../Header/Navigation'
 import Linegraph from '../Widgets/Linegraph';
 import Grid from '@material-ui/core/Grid'
-import Table from '../Widgets/Table';
+import TableP from '../Widgets/Table';
 import Box from '@material-ui/core/Box';
 import React from 'react';
 import createPalette from '@material-ui/core/styles/createPalette';
@@ -53,7 +53,7 @@ class Portal extends React.Component {
                         <Grid time medium >
                             <Box width='50%' bgcolor='white'>
                                 <script>{console.log(sessionStorage.col)}</script>
-                                <Table cols={sessionStorage.col} row={sessionStorage.row}/>
+                                <TableP cols={sessionStorage.col} row={sessionStorage.row}/>
                             </Box>
 
                         </Grid>
