@@ -29,6 +29,7 @@ class Portal extends React.Component {
         console.log(data.resultado[0]); 
         // console.log(Object.keys(data.resultado[0])); 
         sessionStorage.setItem("col", JSON.stringify(Object.keys(data.resultado[0])));
+        sessionStorage.setItem("row", JSON.stringify(Object.values(data.resultado))); 
     }
 
     componentDidMount() {
@@ -52,7 +53,7 @@ class Portal extends React.Component {
                         <Grid time medium >
                             <Box width='50%' bgcolor='white'>
                                 <script>{console.log(sessionStorage.col)}</script>
-                                <Table cols={sessionStorage.col}/>
+                                <Table cols={sessionStorage.col} row={sessionStorage.row}/>
                             </Box>
 
                         </Grid>

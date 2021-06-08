@@ -61,7 +61,7 @@ app.post("/data",(req,res)=> {
         var request = new sql.Request(); 
 
         console.log(req.body.id); 
-        let query = "Select * from DB.ticket where ticket.assigned ='"+ req.body.id +"'"; 
+        let query = "select DB.ticket.Error_id,DB.ticket.priority,DB.ticket.summary from DB.ticket where DB.ticket.assigned = '"+ req.body.id +"'"; 
         console.log(query); 
         request.query(query,(err,{recordset}) => {
             if(err) console.log(err); 
