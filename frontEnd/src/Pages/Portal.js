@@ -10,12 +10,6 @@ import createPalette from '@material-ui/core/styles/createPalette';
 
 class Portal extends React.Component { 
 
-    // constructor(props){
-    //     super(props)
-    //     this.onChange = this
-    //     this.col = []; 
-    // }
-
 
     async getData() {
         console.log(sessionStorage.id)
@@ -33,10 +27,10 @@ class Portal extends React.Component {
     }
 
     componentDidMount() {
+        this.getData()
         setTimeout(() => {
-            this.getData()
-            
-        }, 1000)
+            this.forceUpdate(); 
+        }, 500)
     };
 
 

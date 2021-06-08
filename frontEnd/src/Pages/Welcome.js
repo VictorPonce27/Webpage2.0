@@ -37,7 +37,7 @@ class Welcome extends React.Component {
     const data = await response.json();
     console.log("this is the data")
     console.log(data);
-
+    sessionStorage.clear();
     if (data.login) {
       sessionStorage.setItem('name', data.resultado.name);
       sessionStorage.setItem('id', data.resultado.id);

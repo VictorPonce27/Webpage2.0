@@ -98,10 +98,6 @@ export default function TableP(props) {
     }
     console.log(rows);
 
-    // console.log(columns);
-    // console.log(row);
-
-    // TODO need to work on the rows, need to make the function for this rows 
 
     // TABLE CREATION
 
