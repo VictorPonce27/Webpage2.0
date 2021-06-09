@@ -3,25 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
+import {Route, Switch, HashRouter } from 'react-router-dom';
 import Welcome from './Pages/Welcome';
 import Portal from './Pages/Portal'; 
 import UserProfile from './Pages/UserProfile';
-
+import GuardedRoute from './GuardedRoute'
+import Admin from './Pages/Admin';
+import Game from './Pages/Game'
+    
 ReactDOM.render(
-  //   <BrowserRouter>
-  //     <Switch>
-  //       <Route exact path='/' component={Welcome}/>
-  //       {/* <Route/> */}
-  //     </Switch>
-  //   </BrowserRouter>,
 
   <React.StrictMode>
     <HashRouter basename = {process.env.PUBLIC_URL}>
       <Switch>
-        <Route exact path='/' component={Welcome} />
-        <Route path='/Portal' component={Portal} />
-        <Route path='/UserProfile' component={UserProfile} />
+        <Route exact path='/' component={Welcome}/>
+        <GuardedRoute path='/Portal' component={Portal} auth={true}/>
+        <GuardedRoute path='/UserProfile' component={UserProfile} auth={true}/>
+        <GuardedRoute path='/Game' component={Game} auth={true} />
+        <GuardedRoute path='/Admin' component={Admin} auth={true} />
       </Switch>
     </HashRouter>
   </React.StrictMode>, 

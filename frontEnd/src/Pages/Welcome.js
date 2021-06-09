@@ -2,25 +2,32 @@ import React from 'react';
 import '../CSS/App.css';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+
 // TODO: Fix the error of missign "{" check this page for more info https://www.pluralsight.com/guides/extracting-input-from-a-form-with-reactjs
 
 
 class Welcome extends React.Component {
-  
+
   constructor(props) {
     super(props);
 
-    this.onChangeName = this.onChangeName.bind(this); 
-
-    this.state = { 
-      name: ''
+    this.onChangeName = this.onChangeName.bind(this);
+    this.state = {
+      id: '',
+      name: '',
+      password: '',
+      position: ''
     }
   }
 
-  onChangeName(e){ 
-    this.setState({name: e.target.value})
+  onChangeName(e) {
+    this.setState({ name: e.target.value })
+  }
+  onChangePassword(e) {
+    this.setState({ password: e.target.value })
   }
 
+<<<<<<< HEAD
   async getCredentials(){
     const options = { 
       method: "POST", 
@@ -33,18 +40,32 @@ class Welcome extends React.Component {
 
     if(data.login){ 
      window.open('#/Portal',"_self")
+=======
+  async getCredentials() {
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: this.state.name }),
+    };
+    const response = await fetch('login', options);
+    const data = await response.json();
+    console.log("this is the data")
+    console.log(data);
+    sessionStorage.clear();
+    if (data.login) {
+      sessionStorage.setItem('name', data.resultado.name);
+      sessionStorage.setItem('id', data.resultado.id);
+      sessionStorage.setItem('position', data.resultado.position);
+      sessionStorage.setItem('manager', data.resultado.manager);
+      sessionStorage.setItem('password', data.resultado.password);
+      sessionStorage.setItem('admin', data.resultado.project_manager);
+      window.open('#/Portal', "_self")
+>>>>>>> experimental
     }
-    else{
-      alert("username is wrong")
+    else {
+      alert("username or password is wrong")
     }
   }
-
-
-  onSubmit(e){
-    alert(JSON.stringify({ name: this.state.name }));
-  }
-
-
 
   render() {
     return (
@@ -57,11 +78,15 @@ class Welcome extends React.Component {
               <label>User:</label>
             </div>
             <div className="input-container">
-              <input type="password" placeholder="************" />
+              <input type="password" required='required' placeholder="************" value={this.state.password} onChange={this.onChangePassword.bind(this)} />
               <label>Password:</label>
             </div>
             <ButtonGroup aria-label="Toolbar">
+<<<<<<< HEAD
               <Button variant="default me-md-2" className="btn" onClick= {this.getCredentials.bind(this)} >Login</Button>{''}
+=======
+              <Button variant="default me-md-2" className="btn" onClick={this.getCredentials.bind(this)}>Login</Button>{''}
+>>>>>>> experimental
 
               <Button variant="default me-md-2" className="btn" href='#/Register'>Register</Button>{''}
             </ButtonGroup>
@@ -71,4 +96,4 @@ class Welcome extends React.Component {
     );
   }
 }
-export default Welcome; 
+export default Welcome;
