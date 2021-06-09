@@ -9,6 +9,7 @@ import Portal from './Pages/Portal';
 import UserProfile from './Pages/UserProfile';
 import GuardedRoute from './GuardedRoute'
 import Admin from './Pages/Admin';
+import Game from './Pages/Game'
     
 ReactDOM.render(
 
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route exact path='/' component={Welcome}/>
         <GuardedRoute path='/Portal' component={Portal} auth={true}/>
         <GuardedRoute path='/UserProfile' component={UserProfile} auth={true}/>
+        <GuardedRoute path='/Game' component={Game} auth={true} />
         <GuardedRoute path='/Admin' component={Admin} auth={true} />
       </Switch>
     </HashRouter>

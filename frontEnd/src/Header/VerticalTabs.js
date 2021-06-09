@@ -61,7 +61,7 @@ function navBar(classes, value, handleChange) {
         >
           <Tab aria-current href='#/Portal' label="Home"/>
           <Tab aria-current href='#/UserProfile' label="User"/>
-          <Tab label="Game"/>
+          <Tab aria-current href='#/Game' label="Game"/>
           <Tab aria-current href='#Admin' label="Admin"/>
         </Tabs>
         <TabPanel value={value} index={0}>
@@ -93,7 +93,7 @@ function navBar(classes, value, handleChange) {
         >
           <Tab aria-current href='#/Portal' label="Home"/>
           <Tab aria-current href='#/UserProfile' label="User"/>
-          <Tab label="Game"/>
+          <Tab aria-current href='#/Game' label="Game"/>
         </Tabs>
         <TabPanel value={value} index={0}>
           <DashBoard fontSize='large' />

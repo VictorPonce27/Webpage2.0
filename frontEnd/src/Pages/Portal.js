@@ -1,11 +1,9 @@
 import '../CSS/App.css';
 import Navigation from '../Header/Navigation'
-import Linegraph from '../Widgets/Linegraph';
 import Grid from '@material-ui/core/Grid'
 import TableP from '../Widgets/Table';
 import Box from '@material-ui/core/Box';
 import React from 'react';
-import createPalette from '@material-ui/core/styles/createPalette';
 
 
 class Portal extends React.Component { 
@@ -57,13 +55,6 @@ class Portal extends React.Component {
                             </Box>
 
                         </Grid>
-                        {/* <Grid item large>
-                            <Grid container spacing>
-                                <Box width='50%' bgcolor='white'>
-                                    <Linegraph />
-                                </Box>
-                            </Grid>
-                        </Grid> */}
                         <Grid item xs>
 
                         </Grid>
