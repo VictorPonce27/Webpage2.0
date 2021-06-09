@@ -1,5 +1,6 @@
 const express = require('express');
 var request = require('request');
+const { user } = require('./sqlConfig');
 const app = express();
 // const port = process.env.PORT = 5000;
 const port = 5000; 
@@ -114,6 +115,29 @@ app.post("/employees", (req, res) => {
 });
 
 
+
+app.get('/test/user',function(req,res){
+    var sql = require("mssql");
+    const con = sql.connect(sqlConfig, function (err) {
+        if (err) console.log(err);
+        var request = new sql.Request();
+
+        console.log(req.query.id);
+        let query = "INSERT INTO DB.game(name,tasks,time,laps) VALUES('" + req.query.name + "','" + req.query.tasks +"','"+req.query.time+"','" + req.query.laps+"')";
+        console.log(query);
+        request.query(query,function(err,result){
+            if(err) throw err; 
+            console.log("1 record has been inserted!"); 
+            console.log(result); 
+        }); 
+        // request.query(query, (err, { recordset }) => {
+        //     if (err) console.log(err);
+        //     console.log(recordset);
+        // });
+    });
+    console.log("Post Login");
+    this.stop(); 
+}); 
 
 var server = app.listen({ port }, function () {
     console.log('Server is running..');
