@@ -75,6 +75,44 @@ app.post("/data",(req,res)=> {
     console.log(req.body);
 });
 
+app.post("/delete",(req,res)=> {
+    var sql = require("mssql"); 
+    const con = sql.connect(sqlConfig,function(err){
+        if(err) console.log(err); 
+        var request = new sql.Request(); 
+
+        console.log(req.body.id); 
+        let query = "DELETE FROM DB.ticket WHERE Error_id = '"+ req.body.error +"'"; 
+        console.log(query); 
+        request.query(query,(err,{recordset}) => {
+            if(err) console.log(err); 
+        });
+    });
+    console.log("Ticket has been deleted"); 
+    console.log(req.body);
+});
+
+app.post("/employees", (req, res) => {
+    var sql = require("mssql"); 
+    const con = sql.connect(sqlConfig, function(err) {
+        if (err) console.log(err);
+        var request = new sql.Request();
+        console.log(req.body.teamNum); 
+        let query =
+            "select name, COUNT(name) as tasks from DB.ticket join DB.employee on assigned = id where team_num = '" + req.body.teamNum + "' GROUP BY name";
+        console.log(query);
+        request.query(query, (err, { recordset }) => {
+            if (err) console.log(err);
+            console.log(recordset);
+            res.json({
+                resultado: recordset,
+            });
+        });
+    });
+    console.log("Post Login");
+    console.log(req.body);
+});
+
 
 
 var server = app.listen({ port }, function () {
