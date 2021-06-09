@@ -11,6 +11,7 @@ import GuardedRoute from './GuardedRoute'
 import Admin from './Pages/Admin';
     
 ReactDOM.render(
+
   <React.StrictMode>
     <HashRouter basename = {process.env.PUBLIC_URL}>
       <Switch>

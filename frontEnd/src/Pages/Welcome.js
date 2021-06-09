@@ -44,6 +44,7 @@ class Welcome extends React.Component {
       sessionStorage.setItem('position', data.resultado.position);
       sessionStorage.setItem('manager', data.resultado.manager);
       sessionStorage.setItem('password', data.resultado.password);
+      sessionStorage.setItem('admin', data.resultado.project_manager);
       window.open('#/Portal', "_self")
     }
     else {

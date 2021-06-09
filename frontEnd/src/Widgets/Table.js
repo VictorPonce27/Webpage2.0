@@ -55,6 +55,18 @@ const useStyles = makeStyles({
   },
 });
 
+function finished(ID) {
+      const options = {
+      
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ error: ID }),
+      };
+    const response = fetch('delete', options);
+    console.log("task has been completed")
+    window.location.reload(true);
+}
+
 function changeButton(ID) {
   if(document.getElementById(ID).innerHTML === "Empezar") {
     document.getElementById(ID).innerHTML = "Detener";
@@ -82,6 +94,11 @@ export default function TableP(props) {
 
   const classes = useStyles();
 
+  if(typeof(props.row) === undefined) {
+    return (
+      <p>You are done</p>
+    )
+  }
   // var columns=[];
   var rows = [];
 
@@ -132,7 +149,7 @@ export default function TableP(props) {
               <TableCell align="center">{row.priority}</TableCell>
               <TableCell align="center">{row.summary}</TableCell>
               <TableCell>
-                <Button variant="contained" color="primary" id={row.id} onClick={() => changeButton(row.id)}>Empezar</Button>
+                <Button variant="contained" color="primary" id={row.id} onClick={() => finished(row.id)}>Empezar</Button>
               </TableCell>
             </TableRow>
           ))}

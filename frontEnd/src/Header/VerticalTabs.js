@@ -47,6 +47,68 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function navBar(classes, value, handleChange) {
+  if(sessionStorage.admin !== "0") {
+    return (
+      <div className={classes.root}>
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs example"
+          className={classes.tabs}
+        >
+          <Tab aria-current href='#/Portal' label="Home"/>
+          <Tab aria-current href='#/UserProfile' label="User"/>
+          <Tab label="Game"/>
+          <Tab aria-current href='#Admin' label="Admin"/>
+        </Tabs>
+        <TabPanel value={value} index={0}>
+          <DashBoard fontSize='large' />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <AccountBoxIcon fontSize='large' />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <VideogameAssetIcon fontSize='large' />
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <SupervisedUserCircleIcon fontSize='large' />
+        </TabPanel>
+      </div>
+    );
+  }
+  else {
+    return(
+
+      <div className={classes.root}>
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs example"
+          className={classes.tabs}
+        >
+          <Tab aria-current href='#/Portal' label="Home"/>
+          <Tab aria-current href='#/UserProfile' label="User"/>
+          <Tab label="Game"/>
+        </Tabs>
+        <TabPanel value={value} index={0}>
+          <DashBoard fontSize='large' />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <AccountBoxIcon fontSize='large' />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <VideogameAssetIcon fontSize='large' />
+        </TabPanel>
+      </div>
+    );
+  }
+}
+
 export default function VerticalTabs(Props) {
 
   
@@ -58,32 +120,6 @@ export default function VerticalTabs(Props) {
   };
 
   return (
-    <div className={classes.root}>
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        className={classes.tabs}
-      >
-        <Tab aria-current href='#/Portal' label="Home"/>
-        <Tab aria-current href='#/UserProfile' label="User"/>
-        <Tab label="Game"/>
-        <Tab aria-current href='#Admin' label="Admin"/>
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        <DashBoard fontSize='large' />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <AccountBoxIcon fontSize='large' />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <VideogameAssetIcon fontSize='large' />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <SupervisedUserCircleIcon fontSize='large' />
-      </TabPanel>
-    </div>
+    navBar(classes, value, handleChange)
   );
 }

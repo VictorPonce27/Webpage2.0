@@ -22,8 +22,14 @@ class Portal extends React.Component {
         const data = await response.json();
         console.log(data.resultado[0]); 
         // console.log(Object.keys(data.resultado[0])); 
-        sessionStorage.setItem("col", JSON.stringify(Object.keys(data.resultado[0])));
-        sessionStorage.setItem("row", JSON.stringify(Object.values(data.resultado))); 
+        if(data.resultado.length === 0 || typeof(data.resultado) === undefined) {
+            console.log("Done!")
+        }
+        else {
+            console.log(data.resultado)
+            sessionStorage.setItem("col", JSON.stringify(Object.keys(data.resultado[0])));
+            sessionStorage.setItem("row", JSON.stringify(Object.values(data.resultado))); 
+        }
     }
 
     componentDidMount() {
@@ -51,13 +57,13 @@ class Portal extends React.Component {
                             </Box>
 
                         </Grid>
-                        <Grid item large>
+                        {/* <Grid item large>
                             <Grid container spacing>
                                 <Box width='50%' bgcolor='white'>
                                     <Linegraph />
                                 </Box>
                             </Grid>
-                        </Grid>
+                        </Grid> */}
                         <Grid item xs>
 
                         </Grid>
